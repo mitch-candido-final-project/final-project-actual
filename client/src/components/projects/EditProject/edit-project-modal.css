@@ -1,0 +1,25 @@
+.edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.edit-header i {
+  font-size: 25px;
+  margin-left: 10px;
+  color: red;
+}
+
+.edit-header button {
+  display: flex;
+  align-items: center;
+  color: red;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.edit-header button:hover {
+  cursor: pointer;
+}

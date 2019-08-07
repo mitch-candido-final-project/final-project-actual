@@ -1,0 +1,37 @@
+.user-account-content {
+  min-height: 100vh;
+  background-color: #282d39;
+  border-radius: 5px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.user-account-header {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  width: 60%;
+  min-height: 200px;
+  margin: 20px;
+  border: 2px solid #66c8d4;
+  position: relative;
+}
+
+.user-account-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.edit-btn {
+  position: absolute;
+  font-size: 20px;
+  right: 3%;
+  top: 3%;
+}

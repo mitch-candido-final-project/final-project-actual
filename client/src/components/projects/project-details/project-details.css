@@ -1,0 +1,37 @@
+.project-details-content {
+  background-color: #282d39;
+  border-radius: 5px;
+  padding: 20px;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.exit-details button {
+  background: transparent;
+  border: none;
+}
+
+.exit-details i {
+  font-size: 30px;
+  color: #ce4ad8;
+  transition: all 0.3s ease-in-out;
+}
+
+.exit-details i:hover {
+  cursor: pointer;
+  color: #39b6ff;
+}
+
+.exit-details {
+  align-self: right !important;
+}
+
+.edit-modal {
+  position: absolute;
+}
+
+.project-details {
+  padding: 20px;
+}

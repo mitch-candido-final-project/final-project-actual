@@ -1,0 +1,29 @@
+.dashboard {
+  min-height: 100vh;
+  background-color: #181c28;
+  color: #7882a2;
+  /* display: grid;
+  grid-template-columns: 1fr 4fr; */
+  padding: 30px;
+}
+
+.top-dash-contents {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+.project-details-view {
+  padding: 20px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .top-dash-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-dash-contents:first-child {
+    width: 100%;
+  }
+}
