@@ -3,7 +3,7 @@ import axios from "axios";
 class ProjectService {
   constructor() {
     let service = axios.create({
-      baseURL: "http://localhost:5000/api/projects",
+      baseURL: process.env.REACT_APP_PROJECTSERVICE_BASE_URL,
       withCredentials: true
     });
 

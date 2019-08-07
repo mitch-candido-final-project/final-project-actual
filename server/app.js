@@ -12,11 +12,10 @@ const cors = require("cors");
 const passport = require("passport");
 const session = require("express-session");
 
-
 require("./config/passport-config");
 
 mongoose
-  .connect("mongodb://localhost/final-project-backend", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
   })
   .then(x => {
