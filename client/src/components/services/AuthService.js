@@ -1,4 +1,5 @@
 import axios from "axios";
+import { jsxClosingFragment } from "@babel/types";
 
 class AuthService {
   constructor() {
@@ -31,10 +32,18 @@ class AuthService {
   };
 
   logout = () => {
+    console.log("logout from auth");
     return this.service.post("/logout", {}).then(response => response.data);
   };
   currentUser = () => {
     return this.service.get("/getcurrentuser").then(response => response.data);
+  };
+
+  updateUser = (id, data) => {
+    return this.service
+      .post("/update/" + id, data)
+      .then(() => {})
+      .catch(() => {});
   };
 }
 

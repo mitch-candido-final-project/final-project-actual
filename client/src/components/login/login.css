@@ -1,0 +1,22 @@
+#modal1 button {
+  margin-top: 20px;
+  background-image: linear-gradient(to right, #2edbaf, #57e2e5);
+  width: 35%;
+}
+
+#modal1 {
+  width: 40%;
+}
+
+#modal1 .modal-content {
+  text-align: center;
+}
+.modal .modal-footer {
+  padding: 0 20px !important;
+}
+.modal .modal-footer a {
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 2px solid #fff;
+}

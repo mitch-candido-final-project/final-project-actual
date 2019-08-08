@@ -18,6 +18,15 @@
   color: #fff;
 }
 
+.all-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #66c7d470;
+  padding: 5px 10px;
+  color: #fff;
+}
+
 .project-header i {
   color: #66c8d4;
   transition: all 0.2s ease-in-out;
