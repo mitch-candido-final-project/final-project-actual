@@ -37,3 +37,39 @@
 .fc-day-grid-container {
   height: 500px !important;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .fc-view-container *,
+  .fc-view-container *:before,
+  .fc-view-container *:after {
+    box-sizing: content-box;
+    /* height: 297px; */
+  }
+
+  .fc-view > table {
+    height: 0px !important;
+  }
+
+  .fc-scroller.fc-day-grid-container {
+    overflow: hidden;
+    height: 300px !important;
+  }
+
+  .fc-row .fc-bg {
+    z-index: 1;
+    height: 300px !important;
+  }
+
+  .fc-toolbar h2 {
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  .fc-right {
+    display: flex;
+  }
+
+  .fc-toolbar {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}

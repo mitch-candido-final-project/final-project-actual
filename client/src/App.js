@@ -69,18 +69,20 @@ export default class App extends Component {
     // var elems = document.querySelectorAll('.sidenav');
     // var instances = M.Sidenav.init(elems, {});
   }
-  logoutCall = () => {
-    this.authService.logout().then(() => {
-      console.log("call from nav logout");
-      //
-      this.setState({ currentlyLoggedIn: null });
-    });
-  };
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Nav logout={this.logoutCall} user={this.state.currentlyLoggedIn} />
+          <Route
+            path="/"
+            render={props => (
+              <Nav
+                {...props}
+                user={this.state.currentlyLoggedIn}
+                getUser={this.getCurrentlyLoggedInUser}
+              />
+            )}
+          />
           <button
             data-target="slide-out"
             className="sidenav-trigger btn side-nav-btn"
@@ -123,7 +125,10 @@ export default class App extends Component {
               render={props => (
                 <div className="user-account-container">
                   <UserAccount
+                    {...props}
                     currentlyLoggedIn={this.state.currentlyLoggedIn}
+                    refreshUser={this.getCurrentlyLoggedInUser}
+                    allProjects={this.state.allProjects}
                   />
                 </div>
               )}

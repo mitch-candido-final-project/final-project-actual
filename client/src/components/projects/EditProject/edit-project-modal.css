@@ -23,3 +23,57 @@
 .edit-header button:hover {
   cursor: pointer;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.file-info {
+  font-size: 0.9em;
+  padding: 3px;
+  height: 20px !important;
+}
+
+.browse-btn {
+  background: #2edbaf;
+  color: #fff;
+  max-height: 10px !important;
+  padding: 11px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.browse-btn:hover {
+  background: #4ec0b4;
+  cursor: pointer;
+}
+
+.upload {
+  height: 100px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.user-progress-switch {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.des-text-area {
+  color: #fff !important;
+  border: 1px solid #66c7d4 !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+}
+
+.des-text-area:focus {
+  outline: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .edit-header button {
+    width: 40%;
+  }
+}

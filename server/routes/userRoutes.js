@@ -56,7 +56,8 @@ router.post("/signup", (req, res, next) => {
         password: hashPass,
         email: emailVar,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        image: ""
       });
 
       aNewUser.save(err => {
@@ -127,7 +128,9 @@ router.get("/getcurrentuser", (req, res, next) => {
     newObject.followers = req.user.followers;
     newObject.following = req.user.following;
     newObject.email = req.user.email;
-    newObject.firstName = req.user.lastName;
+    newObject.firstName = req.user.firstName;
+    newObject.lastName = req.user.lastName;
+    newObject.image = req.user.image;
 
     res.status(200).json(newObject);
     return;
@@ -137,17 +140,14 @@ router.get("/getcurrentuser", (req, res, next) => {
 
 router.post("/update/:id", uploadCloud.single("image"), (req, res, next) => {
   let updateData = {};
-
-  updateData.username = req.body.name;
-  updateData.password = req.body.password;
-  updateData.firstName = req.user.firstName;
+  updateData.username = req.body.username;
+  // updateData.password = req.body.password;
+  updateData.firstName = req.body.firstName;
   updateData.lastName = req.body.lastName;
   updateData.email = req.body.email;
-
+  console.log("-=-=-=--=-=update--=-=-=-=-", updateData);
   if (req.file) {
     updateData.image = req.file.url;
-  } else {
-    updateData.image = "";
   }
   User.findByIdAndUpdate(req.params.id, updateData)
     .then(updatedUser => {

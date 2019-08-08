@@ -6,10 +6,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   color: #fff;
+  padding: 10px;
+  width: 75%;
 }
 
 .user-account-header {
@@ -17,16 +19,14 @@
     0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 10px;
-  width: 60%;
+  width: 50%;
   min-height: 200px;
   margin: 20px;
   border: 2px solid #66c8d4;
   position: relative;
-}
-
-.user-account-header {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .edit-btn {
@@ -34,4 +34,194 @@
   font-size: 20px;
   right: 3%;
   top: 3%;
+}
+
+.modal-content .submit-button {
+  margin-top: 15px;
+  width: 14% !important;
+}
+
+.user-image {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  /* background-position: center; */
+  background-size: cover;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.project-card {
+  width: 30%;
+  height: auto;
+  /* background-position: center;
+  background-size: cover; */
+  border-radius: 5px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  position: relative;
+  margin: 1%;
+}
+
+.project-card:hover .project-card-content {
+  position: absolute;
+  color: white;
+  opacity: 1;
+}
+
+.actual-project {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 40px;
+}
+.all-projects-container {
+  margin-top: 40px;
+  width: 100%;
+  /* padding: 20px; */
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /* grid-row-gap: 20px; */
+  /* grid-gap: 20px; */
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.project-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  display: block;
+  transition: all 0.1s ease-in-out;
+}
+
+.project-card:hover img {
+  filter: blur(1px);
+}
+
+.project-link {
+  border-radius: 20px;
+  border: 2px solid #282d39;
+  padding: 5px 10px;
+  color: #282d39;
+  font-size: 20px;
+}
+
+.project-card-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: #66c7d47a;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  margin: 10px 0;
+  width: 70%;
+  background-color: #4e676615;
+  padding-top: 9px;
+  border-radius: 5px;
+  height: 40px;
+  color: #4e6766;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-info {
+  font-size: 0.9em;
+  padding: 3px;
+  height: 20px !important;
+}
+
+.browse-btn {
+  background: #2edbaf;
+  color: #fff;
+  max-height: 10px !important;
+  padding: 11px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.browse-btn:hover {
+  background: #4ec0b4;
+  cursor: pointer;
+}
+
+.upload {
+  height: 100px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .user-account-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 5px;
+  }
+
+  .user-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    /* background-position: center; */
+    background-size: cover;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px -1px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .actual-project {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 200px;
+  }
+
+  .project-card-content {
+  }
+  .user-account-content {
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .project-card {
+    margin: 20px 0;
+  }
+
+  .input-container {
+    margin: 10px 0;
+    width: 100%;
+    background-color: #4e676615;
+    padding-top: 9px;
+    border-radius: 5px;
+    height: 40px;
+    color: #4e6766;
+  }
+  .modal-content .submit-button {
+    margin-top: 15px;
+    width: 100% !important;
+  }
 }

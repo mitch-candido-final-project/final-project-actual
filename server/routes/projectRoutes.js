@@ -9,7 +9,8 @@ router.post("/new-project", uploadCloud.single("image"), (req, res, next) => {
   if (req.file) {
     theImage = req.file.url;
   } else {
-    theImage = "";
+    theImage =
+      "https://www.artconnect.com/assets/default/default_project_list-7c7cb913cb130a76c51f21509f73bbb6.png";
   }
   Project.create({
     name: req.body.name,
@@ -62,6 +63,7 @@ router.post("/update/:id", uploadCloud.single("image"), (req, res, next) => {
   updateData.startDate = req.body.startDate;
   updateData.dueDate = req.body.dueDate;
   updateData.isPublic = req.body.isPublic;
+  updateData.complete = req.body.complete;
 
   if (req.body.tasks) {
     updateData.tasks = req.body.tasks;
@@ -69,8 +71,6 @@ router.post("/update/:id", uploadCloud.single("image"), (req, res, next) => {
 
   if (req.file) {
     updateData.image = req.file.url;
-  } else {
-    updateData.image = "";
   }
   Project.findByIdAndUpdate(req.params.id, updateData)
     .then(singleProject => {
