@@ -9,7 +9,8 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   points: Number,
   followers: [{ type: Schema.Types.ObjectId, ref: "User" }],
-  following: [{ type: Schema.Types.ObjectId, ref: "User" }]
+  following: [{ type: Schema.Types.ObjectId, ref: "User" }],
+  image: String
 });
 
 const User = mongoose.model("User", userSchema);

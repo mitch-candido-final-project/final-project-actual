@@ -27,16 +27,6 @@ export default class ProjectDetails extends Component {
     return singleProject.map(singleProject => {
       return (
         <div key={singleProject._id} className="project-details-content">
-          <div className="project-details-info">
-            <h3>{singleProject.name}</h3>
-            <p>{singleProject.description}</p>
-            <p>{singleProject.startDate}</p>
-            <p>{singleProject.dueDate}</p>
-            <p>{singleProject.timeSpent}</p>
-            <p>{singleProject.complete}</p>
-            <p>{singleProject.isPublic}</p>
-            {/* still have to do the images */}
-          </div>
           <div className="exit-details">
             <a data-target="edit-project-modal" className="modal-trigger">
               <i className="fas fa-edit" />
@@ -45,6 +35,42 @@ export default class ProjectDetails extends Component {
               <i className="fas fa-times-circle" />
             </Link>
           </div>
+          <div className="project-details-info">
+            <div className="project-header">
+              <h3>{singleProject.name}</h3>
+            </div>
+            <div className="project-details">
+              <div className="project-details-text">
+                <label>Description:</label>
+                <p>{singleProject.description}</p>
+                <label>Start Date:</label>
+                <p>{singleProject.startDate}</p>
+                <label>Due Date:</label>
+                <p>{singleProject.dueDate}</p>
+                <label>Time Spent</label>
+                <p>{singleProject.timeSpent}</p>
+              </div>
+              <div className="project-details-right">
+                <div
+                  className="project-images"
+                  style={{ backgroundImage: `url(${singleProject.image}` }}
+                />
+                <div className="option-switch">
+                  {singleProject.isPublic ? (
+                    <p>Visibility: Public</p>
+                  ) : (
+                    <p>Visibility: Private</p>
+                  )}
+                  {singleProject.complete ? (
+                    <p>Status: Complete</p>
+                  ) : (
+                    <p>Status: In Progress</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
           <EditProjectModal
             {...this.props}
             singleProject={singleProject}

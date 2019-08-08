@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AuthService from "../services/AuthService.js";
 import M from "materialize-css";
 import "./nav.css";
 
 export default class Nav extends Component {
+  constructor(props) {
+    super(props);
+
+    this.authService = new AuthService();
+  }
   componentDidMount() {
     var elemsRight = document.querySelectorAll(".sidenav.sidenavRight");
     var elemsLeft = document.querySelectorAll(".sidenav.sidenavLeft");
     var instances1 = M.Sidenav.init(elemsRight, { edge: "right" });
     var instances2 = M.Sidenav.init(elemsLeft, { edge: "left" });
   }
+
+  logoutCall = () => {
+    this.authService.logout().then(() => {
+      this.props.getUser();
+      console.log("call from nav logout", this.props);
+      this.props.history.push("/");
+    });
+  };
+
   render() {
     return (
       <div className="nav-container">
@@ -40,9 +55,7 @@ export default class Nav extends Component {
                   </Link>
                 </li>
                 <li>
-                  <a className="nav-links link-2" onClick={this.props.logout}>
-                    News Feed
-                  </a>
+                  <a className="nav-links link-2">News Feed</a>
                 </li>
                 <li>
                   <Link to="/account" className="nav-links link-3">
@@ -50,7 +63,7 @@ export default class Nav extends Component {
                   </Link>
                 </li>
                 <li>
-                  <a className="nav-links link-4" onClick={this.props.logout}>
+                  <a className="nav-links link-4" onClick={this.logoutCall}>
                     Logout
                   </a>
                 </li>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AuthService from "../services/AuthService";
-
+import "./login.css";
 export default class LoginModal extends Component {
   constructor(props) {
     super(props);
