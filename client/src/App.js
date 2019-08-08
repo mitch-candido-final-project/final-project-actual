@@ -56,7 +56,6 @@ export default class App extends Component {
     this.projectService
       .getAllProjects()
       .then(response => {
-        console.log(response);
         this.setState({ allProjects: [...response] });
       })
       .catch(() => {
@@ -70,7 +69,6 @@ export default class App extends Component {
     // var elems = document.querySelectorAll('.sidenav');
     // var instances = M.Sidenav.init(elems, {});
   }
-
   logoutCall = () => {
     this.authService.logout().then(() => {
       console.log("call from nav logout");
@@ -78,7 +76,6 @@ export default class App extends Component {
       this.setState({ currentlyLoggedIn: null });
     });
   };
-
   render() {
     return (
       <div className="App">

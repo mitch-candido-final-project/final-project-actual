@@ -12,13 +12,16 @@ class Calendar extends Component {
     super(props);
     this.state = {};
   }
+  getTasksCurProj = () => {
+    return this.props.getEvents();
+  };
   render() {
     return (
       <div className="calender-container">
         <FullCalendar
           defaultView="dayGridWeek"
           plugins={[dayGridPlugin, interactionPlugin]}
-          events={this.props.events}
+          events={this.getTasksCurProj()}
           dateClick={this.props.dateClick}
         />
       </div>

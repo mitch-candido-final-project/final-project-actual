@@ -63,6 +63,10 @@ router.post("/update/:id", uploadCloud.single("image"), (req, res, next) => {
   updateData.dueDate = req.body.dueDate;
   updateData.isPublic = req.body.isPublic;
 
+  if (req.body.tasks) {
+    updateData.tasks = req.body.tasks;
+  }
+
   if (req.file) {
     updateData.image = req.file.url;
   } else {
