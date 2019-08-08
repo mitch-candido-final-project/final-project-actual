@@ -56,7 +56,6 @@ export default class App extends Component {
     this.projectService
       .getAllProjects()
       .then(response => {
-        console.log(response);
         this.setState({ allProjects: [...response] });
       })
       .catch(() => {
@@ -70,7 +69,6 @@ export default class App extends Component {
     // var elems = document.querySelectorAll('.sidenav');
     // var instances = M.Sidenav.init(elems, {});
   }
-
   render() {
     return (
       <div className="App">
