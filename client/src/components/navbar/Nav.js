@@ -31,7 +31,7 @@ export default class Nav extends Component {
         <nav className="nav-custom">
           <div className="nav-wrapper nav-custom-wrapper">
             <a href="#!" className="brand-logo">
-              PROLO
+              ProjectPocket
             </a>
             <a
               href="#"

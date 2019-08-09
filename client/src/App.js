@@ -65,7 +65,9 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getCurrentlyLoggedInUser();
-    this.getAllProjects();
+    setTimeout(() => {
+      this.getAllProjects();
+    }, 300);
     // var elems = document.querySelectorAll('.sidenav');
     // var instances = M.Sidenav.init(elems, {});
   }

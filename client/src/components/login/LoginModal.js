@@ -18,8 +18,8 @@ export default class LoginModal extends Component {
     const password = this.state.password;
 
     this.service.login(username, password).then(() => {
-      this.props.history.push("/");
       this.props.getUser();
+      this.props.history.push("/");
       //TODO: get the current user need to change the login component to render
     });
   };
