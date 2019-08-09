@@ -86,12 +86,14 @@ export default class App extends Component {
               />
             )}
           />
-          <button
-            data-target="slide-out"
-            className="sidenav-trigger btn side-nav-btn"
-          >
-            <i className="material-icons">keyboard_arrow_right</i>
-          </button>
+          {this.state.currentlyLoggedIn && (
+            <button
+              data-target="slide-out"
+              className="sidenav-trigger btn side-nav-btn"
+            >
+              <i className="material-icons">keyboard_arrow_right</i>
+            </button>
+          )}
           {this.state.currentlyLoggedIn && <Sidebar />}
           <Switch>
             <Route
