@@ -31,13 +31,31 @@
 
 .mobile-nav li a {
   background-image: linear-gradient(to right, #2edbaf, #57e2e5) !important;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-size: 20px !important;
+  color: #292d39 !important;
+}
+
+.nav-links-li {
+  padding: 0 20px;
+  border-radius: 5px !important;
+  margin: 20px 0;
+  text-align: center;
 }
 /* li:hover {
   background-color: #39b6ff;
 } */
 
 .nav-custom-wrapper img {
-  width: 60%;
+  margin-top: 7px;
+  margin-left: 10px;
+  width: 50%;
+}
+a.brand-logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .loged-in-nav {
@@ -60,7 +78,9 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .nav-custom-wrapper img {
-    width: 80%;
+    width: 70%;
+    margin-top: 4px;
+    margin-left: 0px;
   }
 
   a.brand-logo {

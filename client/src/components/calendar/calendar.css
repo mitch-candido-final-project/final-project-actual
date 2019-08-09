@@ -38,6 +38,10 @@
   height: 500px !important;
 }
 
+td.fc-highlight {
+  background-color: #d46a35b2;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .fc-view-container *,
   .fc-view-container *:before,

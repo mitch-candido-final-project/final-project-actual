@@ -17,6 +17,7 @@ import Signup from "./components/signup/Signup";
 import LoginModal from "./components/login/LoginModal";
 import DashBoard from "./components/dashboard/Dashboard";
 import UserAccount from "./components/user-account/UserAccount";
+import Footer from "./components/footer/footer";
 //projects
 import ProjectDetails from "./components/projects/project-details/ProjectDetails";
 
@@ -143,6 +144,7 @@ export default class App extends Component {
             )}
           />
         </header>
+        <Footer />
       </div>
     );
   }

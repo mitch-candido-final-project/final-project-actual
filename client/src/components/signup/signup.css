@@ -39,6 +39,8 @@ input {
 }
 .full-name {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .first-name {
@@ -48,7 +50,8 @@ input {
 .signup-form button {
   margin-top: 20px;
   align-self: center;
-  background-image: linear-gradient(to right, #2edbaf, #57e2e5);
+  background-image: linear-gradient(to right, #2edbaf, #57e2e5) !important;
+  border-radius: 5px !important;
 }
 
 .sign-up {
@@ -71,10 +74,10 @@ input {
   }
 
   .sign-up img {
-    width: 430px;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    width: 100%;
+    margin-top: 20px;
   }
+
   .signup-form {
     /* height: 300px; */
     margin-right: 0;
@@ -86,10 +89,16 @@ input {
     margin-left: 0px;
     margin-bottom: 0;
     margin-top: 0px;
+    font-size: 50px;
   }
 
   .landing-img p {
     margin-left: 0px;
     font-size: 30px;
+  }
+
+  .landing-img {
+    text-align: center;
+    align-items: center;
   }
 }

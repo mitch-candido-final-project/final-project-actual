@@ -84,23 +84,38 @@ export default class Nav extends Component {
             )}
           </div>
         </nav>
-        <ul className="sidenav sidenavRight mobile-nav" id="mobile-demo">
-          <li>
-            <Link to="/" className="btn">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to="/account" className="btn">
-              Account
-            </Link>
-          </li>
-          <li>
-            <a className="btn" onClick={this.props.logout}>
-              Logout
-            </a>
-          </li>
-        </ul>
+        {this.props.user ? (
+          <ul className="sidenav sidenavRight mobile-nav" id="mobile-demo">
+            <li>
+              <Link to="/" className="btn modal-close">
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link to="/account" className="btn modal-close">
+                Account
+              </Link>
+            </li>
+            <li>
+              <a className="btn modal-close" onClick={this.props.logout}>
+                Logout
+              </a>
+            </li>
+          </ul>
+        ) : (
+          <ul className="sidenav sidenavRight mobile-nav" id="mobile-demo">
+            <li className="nav-links-li">
+              <a data-target="modal1" className="nav-links-login">
+                About
+              </a>
+            </li>
+            <li className="nav-links-li">
+              <a data-target="modal1" className="nav-links-login modal-trigger">
+                Login
+              </a>
+            </li>
+          </ul>
+        )}
       </div>
     );
   }
