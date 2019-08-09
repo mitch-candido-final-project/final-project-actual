@@ -14,6 +14,7 @@ class Calendar extends Component {
   }
   getTasksCurProj = () => {
     let tasks = this.props.getEvents();
+    console.log("it ran", tasks);
     tasks.forEach(eachTask => {
       if (eachTask.isComplete) {
         eachTask.backgroundColor = "#3FB485";
@@ -23,6 +24,9 @@ class Calendar extends Component {
     });
     return tasks;
   };
+  componentDidMount() {
+    this.getTasksCurProj();
+  }
   render() {
     return (
       <div className="calender-container">
@@ -32,6 +36,11 @@ class Calendar extends Component {
           selectable="true"
           events={this.getTasksCurProj()}
           dateClick={this.props.dateClick}
+          header={{
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,dayGridWeek,dayGridDay"
+          }}
         />
       </div>
     );
