@@ -5,6 +5,7 @@
   grid-row-gap: 2px;
   /* padding: 20px; */
   background-color: #66c8d4;
+  padding-bottom: 0;
 }
 
 .status-container {
