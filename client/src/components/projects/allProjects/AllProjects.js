@@ -9,7 +9,14 @@ export default class AllProjects extends Component {
     };
     return this.props.allProjects.map(eachProject => {
       return (
-        <div key={eachProject._id} className="project-single-row">
+        <div
+          key={eachProject._id}
+          className={
+            this.props.currentProjId === eachProject._id
+              ? "project-single-row selected"
+              : "project-single-row"
+          }
+        >
           <button
             className="select-project"
             onClick={() => setCurrentProj(eachProject._id)}

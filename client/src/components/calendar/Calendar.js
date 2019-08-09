@@ -13,7 +13,15 @@ class Calendar extends Component {
     this.state = {};
   }
   getTasksCurProj = () => {
-    return this.props.getEvents();
+    let tasks = this.props.getEvents();
+    tasks.forEach(eachTask => {
+      if (eachTask.isComplete) {
+        eachTask.backgroundColor = "#3FB485";
+      } else {
+        eachTask.backgroundColor = "#CE4AD8";
+      }
+    });
+    return tasks;
   };
   render() {
     return (
@@ -21,6 +29,7 @@ class Calendar extends Component {
         <FullCalendar
           defaultView="dayGridWeek"
           plugins={[dayGridPlugin, interactionPlugin]}
+          selectable="true"
           events={this.getTasksCurProj()}
           dateClick={this.props.dateClick}
         />

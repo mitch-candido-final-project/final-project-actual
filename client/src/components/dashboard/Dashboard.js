@@ -36,9 +36,6 @@ export default class Dashboard extends Component {
   };
   //sets the currentlly selected project
   setCurrentProject = id => {
-    //if we want to reset the day to current day  when changing projects
-    // let today = this.getToday();
-    // this.setState({ currentProjectId: id, daySelected: today });
     this.setState({ currentProjectId: id });
   };
 
@@ -77,8 +74,6 @@ export default class Dashboard extends Component {
   handleTaskCheck = event => {
     let currProj = this.getCurrentProjectInfo();
     currProj.tasks.forEach(eachTask => {
-      console.log("event.target.dataset.taskid", event.target.dataset.taskid);
-      console.log("eachTask.id", eachTask.taskId);
       if (eachTask.taskId === event.target.dataset.taskid) {
         eachTask.isComplete = event.target.checked;
       }
@@ -86,7 +81,7 @@ export default class Dashboard extends Component {
     this.projectService
       .updateProject(this.state.currentProjectId, currProj)
       .then(() => {
-        this.props.history.push("/");
+        this.setState({ currentProjectId: this.state.currentProjectId });
       });
   };
   //handles when a task is being edited
@@ -100,7 +95,7 @@ export default class Dashboard extends Component {
     this.projectService
       .updateProject(this.state.currentProjectId, currProj)
       .then(() => {
-        this.props.history.push("/");
+        this.forceUpdate();
       });
   };
 
@@ -111,7 +106,19 @@ export default class Dashboard extends Component {
     this.projectService
       .updateProject(this.state.currentProjectId, currProj)
       .then(() => {
-        this.props.history.push("/");
+        this.setState({ currentProjectId: this.state.currentProjectId });
+      });
+  };
+  deleteTask = task => {
+    let currProj = this.getCurrentProjectInfo();
+    let taskIndex = currProj.tasks.findIndex(
+      eachTask => eachTask.taskId === task.taskId
+    );
+    currProj.tasks.splice(taskIndex, 1);
+    this.projectService
+      .updateProject(this.state.currentProjectId, currProj)
+      .then(() => {
+        this.setState({ blah: Math.random() });
       });
   };
   //takes care of the modal
@@ -132,11 +139,13 @@ export default class Dashboard extends Component {
               daySelected={this.state.daySelected}
               currentProjectId={this.state.currentProjectId}
               handleNewTask={this.handleNewTask}
+              deleteTask={this.deleteTask}
             />
             <ProjectPanel
               {...this.props}
               allProjects={this.props.allProjects}
               setCurrProj={this.setCurrentProject}
+              currentProjId={this.state.currentProjectId}
             />
           </div>
           <div className="calendar col s12">
@@ -144,6 +153,7 @@ export default class Dashboard extends Component {
               <Calendar
                 getEvents={this.getCurrentProjectTasks}
                 dateClick={this.handleDateClick}
+                blah={this.state.blah}
               />
             )}
           </div>

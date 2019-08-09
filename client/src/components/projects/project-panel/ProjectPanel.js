@@ -21,6 +21,7 @@ export default class ProjectPanel extends Component {
         <AllProjects
           allProjects={this.props.allProjects}
           setCurrProj={this.props.setCurrProj}
+          currentProjId={this.props.currentProjId}
         />
       </div>
     );

@@ -50,17 +50,30 @@ export default class TaskPannel extends Component {
               />
               <span className="strikethrough">{eachTask.title}</span>
             </label>
-            <i
-              className="material-icons right"
-              onClick={() => {
-                this.setEditTask(eachTask);
-              }}
-            >
-              create
-            </i>
+            <span>
+              <i
+                className="material-icons right"
+                onClick={() => {
+                  this.deleteTask(eachTask);
+                }}
+              >
+                delete
+              </i>
+              <i
+                className="material-icons right"
+                onClick={() => {
+                  this.setEditTask(eachTask);
+                }}
+              >
+                create
+              </i>
+            </span>
           </div>
         );
     });
+  };
+  deleteTask = taskDelete => {
+    this.props.deleteTask(taskDelete);
   };
   setEditTask = taskToEdit => {
     this.setState({ editText: taskToEdit.title, editId: taskToEdit.taskId });
@@ -98,7 +111,9 @@ export default class TaskPannel extends Component {
     return (
       <div className="task-container">
         <div className="project-header task-header">
-          <h5>All Tasks</h5>
+          <h5>
+            All Tasks - <span>{this.props.daySelected.slice(5)}</span>
+          </h5>
           {this.props.currentProjectId && (
             <a onClick={this.addATask}>
               <i className="fas fa-plus-circle fa-2x" />

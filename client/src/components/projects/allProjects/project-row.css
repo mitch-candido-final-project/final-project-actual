@@ -8,6 +8,10 @@
   color: #fff;
 }
 
+.project-single-row.selected {
+  background-color: #2ab7a9;
+}
+
 .select-project {
   background: transparent;
   border: none;
