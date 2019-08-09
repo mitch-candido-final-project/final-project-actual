@@ -10,7 +10,7 @@ router.post("/new-project", uploadCloud.single("image"), (req, res, next) => {
     theImage = req.file.url;
   } else {
     theImage =
-      "https://www.artconnect.com/assets/default/default_project_list-7c7cb913cb130a76c51f21509f73bbb6.png";
+      "http://res.cloudinary.com/digitalnimbus/image/upload/v1565326679/finalProject/ProjectPocketCard.png.png";
   }
   Project.create({
     name: req.body.name,

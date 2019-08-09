@@ -9,10 +9,41 @@
 }
 input[type="checkbox"]:checked + span.strikethrough {
   text-decoration: line-through;
+  width: 100%;
+}
+[type="checkbox"] + span:not(.lever) {
+  width: 100%;
+}
+
+.task-row {
+  justify-content: space-between !important;
+  padding: 9px 20px !important;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  background: transparent !important;
+}
+
+.save-task-edit {
+  border: none;
+}
+
+.task-header {
+  padding: 15px !important;
+}
+input {
+  width: 0;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .task-container {
     width: 100% !important;
+  }
+
+  [type="checkbox"] + span:not(.lever) {
+    width: 100%;
   }
 }

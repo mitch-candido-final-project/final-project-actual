@@ -38,6 +38,11 @@ export default class User extends Component {
   render() {
     return (
       <div className="sign-up">
+        <div className="landing-img">
+          <h1>Project Pocket</h1>
+          <p>All your projects in your pocket.</p>
+          <img src="/images/smartmockups_jz3ng2j1.png" />
+        </div>
         <form className="signup-form" onSubmit={this.tryToSignUp}>
           <h3>Sign Up:</h3>
           <div className="full-name">

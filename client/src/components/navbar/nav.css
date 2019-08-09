@@ -25,9 +25,20 @@
   background-color: #66c8d4;
 }
 
+.mobile-nav {
+  background-color: #292d39 !important;
+}
+
+.mobile-nav li a {
+  background-image: linear-gradient(to right, #2edbaf, #57e2e5) !important;
+}
 /* li:hover {
   background-color: #39b6ff;
 } */
+
+.nav-custom-wrapper img {
+  width: 60%;
+}
 
 .loged-in-nav {
   display: flex;
@@ -45,4 +56,16 @@
   border-radius: 5px;
   /* background-image: linear-gradient(to right, #66c8d4, #39b6ff) !important; */
   background-color: #39b6ff;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .nav-custom-wrapper img {
+    width: 80%;
+  }
+
+  a.brand-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
