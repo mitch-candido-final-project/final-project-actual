@@ -31,7 +31,7 @@ export default class Nav extends Component {
         <nav className="nav-custom">
           <div className="nav-wrapper nav-custom-wrapper">
             <a href="#!" className="brand-logo">
-              PROLO
+              <img src={"/images/ProjectPocketLogo.svg"} />
             </a>
             <a
               href="#"
@@ -84,7 +84,7 @@ export default class Nav extends Component {
             )}
           </div>
         </nav>
-        <ul className="sidenav sidenavRight" id="mobile-demo">
+        <ul className="sidenav sidenavRight mobile-nav" id="mobile-demo">
           <li>
             <Link to="/" className="btn">
               Dashboard
@@ -99,9 +99,6 @@ export default class Nav extends Component {
             <a className="btn" onClick={this.props.logout}>
               Logout
             </a>
-          </li>
-          <li>
-            <a href="mobile.html">Mobile</a>
           </li>
         </ul>
       </div>

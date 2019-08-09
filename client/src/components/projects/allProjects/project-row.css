@@ -1,6 +1,6 @@
 .project-single-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   padding: 10px;
@@ -8,10 +8,13 @@
   color: #fff;
 }
 
-button {
+.select-project {
   background: transparent;
   border: none;
   color: #fff !important;
+  width: 150px;
+  text-align: left;
+  padding: 0;
 }
 
 button.select-project {
@@ -28,4 +31,25 @@ button.select-project {
   font-size: 20px;
   cursor: pointer;
   color: #ce4ad8;
+}
+
+span {
+  width: 150px;
+}
+
+.project-status-home {
+  width: 100px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .public-private {
+    display: none !important;
+  }
+  span {
+    width: 100px;
+  }
+
+  .select-project {
+    width: 130px;
+  }
 }

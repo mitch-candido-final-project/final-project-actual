@@ -10,6 +10,7 @@ class EditProject extends Component {
       startDate: this.props.singleProject.startDate,
       dueDate: this.props.singleProject.dueDate,
       isPublic: this.props.singleProject.isPublic,
+      complete: this.props.singleProject.complete,
       image: this.props.singleProject.image
     };
     this.service = new ProjectService();
@@ -150,7 +151,7 @@ class EditProject extends Component {
                 onChange={e => this.handleChangeFile(e)}
               />
               <a className="browse-btn">Browse Files</a>
-              <span className="file-info">Upload a profile picture</span>
+              <span className="file-info"> Change project picture</span>
             </div>
             <button className="btn modal-close">Submit</button>
           </form>

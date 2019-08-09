@@ -51,13 +51,20 @@ router.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync(10);
       const hashPass = bcrypt.hashSync(password, salt);
 
+      let theImage;
+      if (req.file) {
+        theImage = req.file.url;
+      } else {
+        theImage =
+          "https://icon-library.net/images/default-user-icon/default-user-icon-9.jpg";
+      }
       const aNewUser = new User({
         username: userNameVar,
         password: hashPass,
         email: emailVar,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        image: ""
+        image: theImage
       });
 
       aNewUser.save(err => {

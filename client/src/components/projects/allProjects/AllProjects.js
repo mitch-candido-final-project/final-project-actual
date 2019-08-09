@@ -16,9 +16,17 @@ export default class AllProjects extends Component {
           >
             {eachProject.name}
           </button>
-          <span>{eachProject.startDate}</span>
-          <span>{eachProject.dueDate}</span>
-          <span>{eachProject.isPublic}</span>
+          <span>Due Date: {eachProject.dueDate}</span>
+          {eachProject.complete ? (
+            <span className="project-status-home">Completed</span>
+          ) : (
+            <span className="project-status-home">In Progress</span>
+          )}
+          {eachProject.isPublic ? (
+            <span className="project-status-home public-private">Public</span>
+          ) : (
+            <span className="project-status-home public-private">Private</span>
+          )}
           <Link to={`/project/${eachProject._id}`}>
             <i className="fas fa-angle-double-right" />
           </Link>
