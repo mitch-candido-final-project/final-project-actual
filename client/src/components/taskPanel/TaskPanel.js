@@ -32,7 +32,7 @@ export default class TaskPannel extends Component {
                 data-taskid={eachTask.taskId}
                 style={{ height: "25px" }}
               />
-              <button>
+              <button className="save-task-edit">
                 <i className="material-icons right">save</i>
               </button>
             </form>
@@ -40,7 +40,7 @@ export default class TaskPannel extends Component {
         );
       else
         return (
-          <div key={i} className="project-single-row">
+          <div key={i} className="project-single-row task-row">
             <label>
               <input
                 type="checkbox"
@@ -97,7 +97,7 @@ export default class TaskPannel extends Component {
   render() {
     return (
       <div className="task-container">
-        <div className="project-header">
+        <div className="project-header task-header">
           <h5>All Tasks</h5>
           {this.props.currentProjectId && (
             <a onClick={this.addATask}>
@@ -116,7 +116,7 @@ export default class TaskPannel extends Component {
                 onChange={e => this.handleChange(e)}
                 style={{ height: "25px" }}
               />
-              <button>
+              <button className="save-task-edit">
                 <i className="material-icons right">save</i>
               </button>
             </form>
